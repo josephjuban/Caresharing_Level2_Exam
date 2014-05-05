@@ -1,0 +1,5 @@
+1. Files can be opened using Selenium IDE
+2. Selenium IDE plugins must be installed:
+	a) Flow Control
+	b) SelBlocks
+3. xml files must be placed in C:/ directory

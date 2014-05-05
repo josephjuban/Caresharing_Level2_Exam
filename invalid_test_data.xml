@@ -1,0 +1,7 @@
+<testdata>
+    <vars name="" age="18" gender="female" sports_opt1="checked" sports_opt2="checked" sports_opt3="checked" sports_opt4="checked"/>
+    <vars name="JonSnow" age="151" gender="male" sports_opt1="checked" sports_opt2="" sports_opt3="" sports_opt4="checked"/>
+	<vars name="TyrionLannister" age="36" gender="" sports_opt1="" sports_opt2="" sports_opt3="checked" sports_opt4="checked"/>
+	<vars name="SansaStark" age="4" gender="female" sports_opt1="checked" sports_opt2="checked" sports_opt3="checked" sports_opt4=""/>
+	<vars name="A" age="14" gender="female" sports_opt1="" sports_opt2="checked" sports_opt3="checked" sports_opt4=""/>
+</testdata>

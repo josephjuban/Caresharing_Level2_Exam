@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://docs.google.com/" />
+<title>valid_input_tc</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">valid_input_tc</td></tr>
+</thead><tbody>
+<!--Specify test data and start test loop-->
+<tr>
+	<td>forXml</td>
+	<td>file://c:/valid_test_data.xml</td>
+	<td></td>
+</tr>
+<!---->
+<!--Open page -->
+<tr>
+	<td>store</td>
+	<td>https://docs.google.com/forms/d/12f7orObPipIDCZOOQsIH9_U6kGgEVOGFhd5qgO0myEo/formResponse</td>
+	<td>test_form_address</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${test_form_address}</td>
+	<td></td>
+</tr>
+<!---->
+<!--Check if form elements are present-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=h1.ss-form-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h1.ss-form-title</td>
+	<td>Test Form</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.ss-required-asterisk</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.ss-required-asterisk</td>
+	<td>* Required</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.ss-q-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.ss-q-title</td>
+	<td>Name *</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=entry_1563791636</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/label/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/label/div</td>
+	<td>Age *</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=entry_930637752</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[3]/div/div/label/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[3]/div/div/label/div</td>
+	<td>Gender *</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_351010933_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=span.ss-choice-label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=span.ss-choice-label</td>
+	<td>Male</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_351010933_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[3]/div/div/ul/li[2]/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[3]/div/div/ul/li[2]/label/span[2]</td>
+	<td>Female</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=ss-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=ss-submit</td>
+	<td>Continue »</td>
+</tr>
+<!---->
+<!--Fill up fields of first form-->
+<tr>
+	<td>type</td>
+	<td>id=entry_1563791636</td>
+	<td>${name}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=entry_930637752</td>
+	<td>${age}</td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>if(storedVars['gender'] == &quot;male&quot;){window.document.getElementById(&quot;group_351010933_1&quot;).checked=&quot;checked&quot;;} else if(storedVars['gender'] == &quot;female&quot;){window.document.getElementById(&quot;group_351010933_2&quot;).checked=&quot;checked&quot;}</td>
+	<td></td>
+</tr>
+<!---->
+<!--Check entries of first form-->
+<tr>
+	<td>storeValue</td>
+	<td>id=entry_1563791636</td>
+	<td>nameVal</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=entry_930637752</td>
+	<td>ageVal</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>var myRe = /^([a-zA-Z0-9]{5,50})$/; myRe.test(&quot;&quot;+storedVars['nameVal']+&quot;&quot;);</td>
+	<td>isValidName</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>var myRe = /^(0*[5-9]|0*[0-9]{2}|0*1[0-4][0-9]|150)$/;&nbsp;&nbsp;myRe.test(&quot;&quot;+storedVars['ageVal']+&quot;&quot;);</td>
+	<td>isValidAge</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=group_351010933_1</td>
+	<td>gender_male</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>id=group_351010933_2</td>
+	<td>gender_female</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>&quot;true&quot;</td>
+	<td>isValidGender</td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>if(storedVars['gender_male'] == &quot;off&quot; &amp;&amp; storedVars['gender_female'] == &quot;off&quot;){ storedVars['isValidGender'] = &quot;false&quot;;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>(${isValidGender} == &quot;false&quot; || ${isValidGender} == false || ${isValidName} == false || ${isValidAge} == false)</td>
+	<td>endLoop</td>
+</tr>
+<!---->
+<!--Submit for if all entries are value-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=ss-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<!---->
+<!--Check if appropriate Sports options are displayed based on gender selection-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['gender_male'] == &quot;off&quot;</td>
+	<td>female_branch</td>
+</tr>
+<!---->
+<!--Check male gender title-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.ss-q-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.ss-q-title</td>
+	<td>Sports (Men)</td>
+</tr>
+<!--Check first option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_1887354367_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=span.ss-choice-label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=span.ss-choice-label</td>
+	<td>Basketball</td>
+</tr>
+<!--Check second option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_1887354367_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[2]/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[2]/label/span[2]</td>
+	<td>Wrestling</td>
+</tr>
+<!--Check third option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_1887354367_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[3]/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[3]/label/span[2]</td>
+	<td>Running</td>
+</tr>
+<!--Check fourth option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_1887354367_4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[4]/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[4]/label/span[2]</td>
+	<td>MMA</td>
+</tr>
+<!--Fill up Sports options for Women-->
+<tr>
+	<td>getEval</td>
+	<td>window.document.getElementById('group_1887354367_1').checked=&quot;&quot;+storedVars['sports_opt1']+&quot;&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>window.document.getElementById('group_1887354367_2').checked=&quot;&quot;+storedVars['sports_opt2']+&quot;&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>window.document.getElementById('group_1887354367_3').checked=&quot;&quot;+storedVars['sports_opt3']+&quot;&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>window.document.getElementById('group_1887354367_4').checked=&quot;&quot;+storedVars['sports_opt4']+&quot;&quot;</td>
+	<td></td>
+</tr>
+<!---->
+<tr>
+	<td>goto</td>
+	<td>end_branch</td>
+	<td></td>
+</tr>
+<!--End male branch checking-->
+<!---->
+<!--Female branch checking-->
+<tr>
+	<td>label</td>
+	<td>female_branch</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.ss-q-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.ss-q-title</td>
+	<td>Sports (Women)</td>
+</tr>
+<!--Check first option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_175266393_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=span.ss-choice-label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=span.ss-choice-label</td>
+	<td>Volleyball</td>
+</tr>
+<!--Check second option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_175266393_2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[2]/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[2]/label/span[2]</td>
+	<td>Swimming</td>
+</tr>
+<!--Check third option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_175266393_3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[3]/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[3]/label/span[2]</td>
+	<td>Running</td>
+</tr>
+<!--Check fourth option-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=group_175266393_4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[4]/label/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//form[@id='ss-form']/ol/div[2]/div/div/ul/li[4]/label/span[2]</td>
+	<td>Gymnastics</td>
+</tr>
+<!---->
+<!--Fill up Sports options for Women-->
+<tr>
+	<td>getEval</td>
+	<td>window.document.getElementById('group_175266393_1').checked=&quot;&quot;+storedVars['sports_opt1']+&quot;&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>window.document.getElementById('group_175266393_2').checked=&quot;&quot;+storedVars['sports_opt3']+&quot;&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>window.document.getElementById('group_175266393_3').checked=&quot;&quot;+storedVars['sports_opt3']+&quot;&quot;</td>
+	<td></td>
+</tr>
+<tr>
+	<td>getEval</td>
+	<td>window.document.getElementById('group_175266393_4').checked=&quot;&quot;+storedVars['sports_opt4']+&quot;&quot;</td>
+	<td></td>
+</tr>
+<!---->
+<!--End female branch checking-->
+<!---->
+<tr>
+	<td>label</td>
+	<td>end_branch</td>
+	<td></td>
+</tr>
+<!---->
+<!---->
+<!--Submit second form-->
+<!--Back button is not included in test specification-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=ss-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=ss-submit</td>
+	<td></td>
+</tr>
+<!---->
+<!--End test loop-->
+<tr>
+	<td>endForXml</td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

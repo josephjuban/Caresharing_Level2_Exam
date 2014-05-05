@@ -1,0 +1,7 @@
+<testdata>
+    <vars name="DaenerysTargaryen" age="18" gender="female" sports_opt1="checked" sports_opt2="checked" sports_opt3="checked" sports_opt4="checked"/>
+    <vars name="JonSnow" age="20" gender="male" sports_opt1="checked" sports_opt2="" sports_opt3="" sports_opt4="checked"/>
+	<vars name="TyrionLannister" age="36" gender="male" sports_opt1="" sports_opt2="" sports_opt3="checked" sports_opt4="checked"/>
+	<vars name="SansaStark" age="16" gender="female" sports_opt1="checked" sports_opt2="checked" sports_opt3="checked" sports_opt4=""/>
+	<vars name="AryaStark" age="14" gender="female" sports_opt1="" sports_opt2="checked" sports_opt3="checked" sports_opt4=""/>
+</testdata>
